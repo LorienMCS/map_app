@@ -5,46 +5,46 @@ var elevationSvc;
 // add a window to display the elevation info
 var elevWindow = new google.maps.InfoWindow();
 
-/*To initialize a Map, we first create a Map options object to contain 
-map initialization variables. This object is not constructed (using a constructor, 
-for multiple instances); instead it is created as an object literal (just one). 
+/*To initialize a Map, we first create a Map options object to contain
+map initialization variables. This object is not constructed (using a constructor,
+for multiple instances); instead it is created as an object literal (just one).
 
-There are two required options for every map: center and zoom. 
-The initial resolution at which to display the map is set by the zoom property, 
-where zoom 0 corresponds to a map of the Earth fully zoomed out, 
+There are two required options for every map: center and zoom.
+The initial resolution at which to display the map is set by the zoom property,
+where zoom 0 corresponds to a map of the Earth fully zoomed out,
 and higher zoom levels zoom in at a higher resolution.
 
-You modify the map type in use by the Map by setting its mapTypeId property, 
-either within the constructor via setting its Map options object, 
-or by calling the map's setMapTypeId() method. 
+You modify the map type in use by the Map by setting its mapTypeId property,
+either within the constructor via setting its Map options object,
+or by calling the map's setMapTypeId() method.
 The following map types are available in the Google Maps API:
 MapTypeId.ROADMAP displays the default road map view. This is the default map type.
 MapTypeId.SATELLITE displays Google Earth satellite images
 MapTypeId.HYBRID displays a mixture of normal and satellite views
-MapTypeId.TERRAIN displays a physical map based on terrain information. 
+MapTypeId.TERRAIN displays a physical map based on terrain information.
 
-Because we want to center the map on a specific point, we create a LatLng object 
+Because we want to center the map on a specific point, we create a LatLng object
 to hold this location by passing the location's coordinates in the order: latitude, longitude:
-Instead of creating a new google.maps.LatLng object each time you'd like to add a geographic 
-coordinate, you can use a LatLng object literal. 
-LatLng object literals are supported from version 3.16 and later. 
-They provide a convenient way to add a coordinate, and can be used interchangably with a 
-LatLng object in most places in the API. When you create an object, or call a method, 
-using a LatLng object literal, the Google Maps JavaScript API will replace 
+Instead of creating a new google.maps.LatLng object each time you'd like to add a geographic
+coordinate, you can use a LatLng object literal.
+LatLng object literals are supported from version 3.16 and later.
+They provide a convenient way to add a coordinate, and can be used interchangably with a
+LatLng object in most places in the API. When you create an object, or call a method,
+using a LatLng object literal, the Google Maps JavaScript API will replace
 it with a new google.maps.LatLng behind the scenes.
 
 The Maps API comes with a handful of built-in controls you can use in your maps.
-By default, your map and the associated map controls will match the 
+By default, your map and the associated map controls will match the
 standard look and feel of the Google Maps interface.
-You don't access or modify these map controls directly. Instead, you modify the map's 
-MapOptions fields which affect the visibility and presentation of controls. 
-You can adjust control presentation upon instantiating your map (with appropriate MapOptions) 
+You don't access or modify these map controls directly. Instead, you modify the map's
+MapOptions fields which affect the visibility and presentation of controls.
+You can adjust control presentation upon instantiating your map (with appropriate MapOptions)
 or modify a map dynamically by calling setOptions() to change the map's options.
-Not all of these controls are enabled by default. 
-If you wish to only add or modify existing behavior, you need to ensure 
+Not all of these controls are enabled by default.
+If you wish to only add or modify existing behavior, you need to ensure
 that the control is explicitly added to your application.
 Several controls are configurable, allowing you to alter their behavior or change their appearance. 
-As well as modifying the style and position of existing API controls, 
+As well as modifying the style and position of existing API controls,
 you can create your own controls to handle interaction with the user.*/
 
 function initialize() {
@@ -55,22 +55,22 @@ function initialize() {
   };
 
 
-  /* The JavaScript class that represents a map is the Map class. 
-  Objects of this class define a single map on a page. (You may create more than one 
-  instance of this class - each object will define a separate map on the page.) 
-  We create a new instance of this class using the JavaScript new operator. 
+  /* The JavaScript class that represents a map is the Map class.
+  Objects of this class define a single map on a page. (You may create more than one
+  instance of this class - each object will define a separate map on the page.)
+  We create a new instance of this class using the JavaScript new operator.
   The Map constructor creates a new map using any optional parameters that are
   passed (the zoom, center, and mapTypeId parameters stored in the mapOptions variable).
   We also get the div element to put the map in.*/
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 
-  /*The ElevationService object provides you with a simple interface 
-  to query locations on the earth for elevation data. 
-  The ElevationService object communicates with the Google Maps API Elevation 
-  Service which receives elevation requests and returns elevation data. 
+  /*The ElevationService object provides you with a simple interface
+  to query locations on the earth for elevation data.
+  The ElevationService object communicates with the Google Maps API Elevation
+  Service which receives elevation requests and returns elevation data.
   Note that these requests are rate-limited to discourage abuse of the service,
-  and may be changed in the future without notice.  
+  and may be changed in the future without notice.
   The free Elevation API has the following limits in place:
   2500 requests per 24 hour period.
   512 locations per request.
@@ -80,58 +80,58 @@ function initialize() {
   google.maps.event.addListener(map, 'click', getElevation);
 
 
-  /* The Google Maps API allows you to display the public transit network of a 
-  city on your map using the TransitLayer object. When the Transit Layer is enabled, 
-  and the map is centered on a city that supports transit information, the map will 
-  display major transit lines as thick, colored lines. The color of the line is set 
-  based upon information from the transit line operator. Enabling the Transit Layer 
+  /* The Google Maps API allows you to display the public transit network of a
+  city on your map using the TransitLayer object. When the Transit Layer is enabled,
+  and the map is centered on a city that supports transit information, the map will
+  display major transit lines as thick, colored lines. The color of the line is set
+  based upon information from the transit line operator. Enabling the Transit Layer
   will alter the style of the base map to better emphasize transit routes.
 
-  Transit information is only available in select locations. To see a list of cities 
-  where public transit information is currently available, please consult 
+  Transit information is only available in select locations. To see a list of cities
+  where public transit information is currently available, please consult
   (https://www.google.com/landing/transit/cities/index.html). */
   var transitLayer = new google.maps.TransitLayer();
   transitLayer.setMap(map);
 
 
-  /* The google.maps.Marker constructor takes a single Marker options 
+  /* The google.maps.Marker constructor takes a single Marker options
   object literal, specifying the initial properties of the marker.
 
   The following fields are particularly important and commonly set when constructing a marker:
 
   position (required) specifies a LatLng identifying the initial location of the marker.
   map (optional) specifies the Map on which to place the marker.
-  The marker's title will appear as a tooltip. 
-  If you do not specify the map on construction of the marker, 
-  the marker is created but is not attached to (or displayed on) the map. 
+  The marker's title will appear as a tooltip.
+  If you do not specify the map on construction of the marker,
+  the marker is created but is not attached to (or displayed on) the map.
   You may add the marker later by calling the marker's setMap() method.
 
-  You can animate markers so that they exhibit dynamic movement. To specify the way a 
+  You can animate markers so that they exhibit dynamic movement. To specify the way a
   marker is animated, use the marker's animation property, of type google.maps.Animation.
-  DROP indicates that the marker should drop from the top of the map to its 
-  final location when first placed on the map. Animation will cease once the marker 
-  comes to rest and animation will revert to null. 
-  This type of animation is usually specified during creation of the Marker. 
+  DROP indicates that the marker should drop from the top of the map to its
+  final location when first placed on the map. Animation will cease once the marker
+  comes to rest and animation will revert to null.
+  This type of animation is usually specified during creation of the Marker.
 
-  In the most basic case, an icon can simply indicate an image to use instead of 
-  the default Google Maps pushpin icon. 
+  In the most basic case, an icon can simply indicate an image to use instead of
+  the default Google Maps pushpin icon.
   To specify such an icon, set the marker's icon property to the URL of an image.
 
-  Place IDs are stable values (meaning that once you've identified the place ID 
-  for a location, you can reuse that value when you next look up that location) 
+  Place IDs are stable values (meaning that once you've identified the place ID
+  for a location, you can reuse that value when you next look up that location)
   that uniquely reference a place on a Google Map.
-  Traditionally, developers reference locations on a map as latitudinal and longitudinal 
-  coordinates. However, different APIs can translate the same latlng to different 
+  Traditionally, developers reference locations on a map as latitudinal and longitudinal
+  coordinates. However, different APIs can translate the same latlng to different
   addresses, and the translation from latlngs to addresses can also change over time.
-  By using Place IDs in your app, the locations you reference become more consistent 
-  and apps become more reliable and user-friendly. 
+  By using Place IDs in your app, the locations you reference become more consistent
+  and apps become more reliable and user-friendly.
   When you add a marker using a Place instead of a location, the Maps API
   will automatically add a 'Save to Google Maps' link to any info window
-  associated with that marker. 
+  associated with that marker.
   Attributions help users find your site again. In the attribution object, specify:
   The source of the save. Typically the name of your site or app.
   An optional webUrl to include as a link back to your site.
-  An optional iosDeepLinkId, specified as a URL Scheme, that will be displayed in place 
+  An optional iosDeepLinkId, specified as a URL Scheme, that will be displayed in place
   of the webUrl when viewed on iOS. */
 
   var mclarMarker = new google.maps.Marker({
@@ -170,6 +170,48 @@ function initialize() {
 
   google.maps.event.addListener(mclarMarker, 'click', function() {
     mclarWindow.open(map, mclarMarker);
+  });
+
+ 
+  var pleasMarker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'Mary Ellen Pleasant Memorial Park',
+    icon: 'tree.png',
+    place: {
+      placeId: 'Ei0xNjYxIE9jdGF2aWEgU3QsIFNhbiBGcmFuY2lzY28sIENBIDk0MTA5LCBVU0E',
+      location: {
+        lat: 37.787746,
+        lng: -122.426877
+      }
+    },
+    attribution: {
+      source: 'Trees and Stairs in SF',
+      //webUrl: need url here
+    }
+  });
+
+  var pleasInfo = '<h1>Mary Ellen Pleasant Memorial Park</h1>' +
+    '<p>Almost 100 years before Rosa Parks, San Francisco resident ' +
+    'Mary Ellen Pleasant sued a local transportation company for not ' +
+    'letting her and other African Americans ride. She won.</p> ' +
+    '<p>Many details of Ms. Pleasant’s life are open to question, but what is ' +
+    'certain, and recorded in a plaque at the corner of Octavia and Bush streets, ' +
+    'is that she was a tireless worker for civil rights and a great entrepreneur.</p>' +
+    '<p>The Mary Ellen Pleasant Memorial Park, the smallest park in San Francisco, ' +
+    'consists of six enormous eucalyptus blue gum trees marching down Octavia Street, '+
+    'remaining from the twenty she planted. The trees are landmarked '+
+    'by the City of San Francisco.</p>'+
+    '<p>Attribution: <a href="http://www.sfcityguides.org/public_guidelines.html?article'+
+    '=1305&submitted=TRUE&srch_text=&submitted2=&topic=San" target="_blank">' +
+    'Marian Halley at SF City Guides</a> (last visited May 28, 2015)</p>';
+
+  var pleasWindow = new google.maps.InfoWindow({
+    content: pleasInfo
+  });
+
+  google.maps.event.addListener(pleasMarker, 'click', function() {
+    pleasWindow.open(map, pleasMarker);
   });
 
 
@@ -339,25 +381,25 @@ function initialize() {
   });
 
 
-  /* An InfoWindow displays content (usually text or images) in a popup window above the map, 
-   at a given location. The info window has a content area and a tapered stem. 
-   The tip of the stem is attached to a specified location on the map. 
+  /* An InfoWindow displays content (usually text or images) in a popup window above the map,
+   at a given location. The info window has a content area and a tapered stem.
+   The tip of the stem is attached to a specified location on the map.
 
-   The InfoWindow constructor takes an InfoWindowOptions object literal, 
-   which specifies the initial parameters for displaying the info window. 
+   The InfoWindow constructor takes an InfoWindowOptions object literal,
+   which specifies the initial parameters for displaying the info window.
 
-   The content of the InfoWindow may contain a string of text, a snippet of HTML, 
-   or a DOM element. To set the content, either specify it within the InfoWindowOptions 
+   The content of the InfoWindow may contain a string of text, a snippet of HTML,
+   or a DOM element. To set the content, either specify it within the InfoWindowOptions
    or call setContent() on the InfoWindow explicitly.
 
-   If you wish to explicitly size the content, you can put it in a <div> element 
-   and style the <div> with CSS. You can use CSS to enable scrolling too. 
-   Note that if you do not enable scrolling and the content exceeds the space available 
+   If you wish to explicitly size the content, you can put it in a <div> element
+   and style the <div> with CSS. You can use CSS to enable scrolling too.
+   Note that if you do not enable scrolling and the content exceeds the space available
    in the info window, the content may spill out of the info window.
 
-   Best practices: For the best user experience, only one info window should be open 
-   on the map at any one time. Multiple info windows make the map appear cluttered. 
-   You can create one InfoWindow object and open it at different locations 
+   Best practices: For the best user experience, only one info window should be open
+   on the map at any one time. Multiple info windows make the map appear cluttered.
+   You can create one InfoWindow object and open it at different locations
    or markers upon map events, such as user clicks.  */
 
   var contentString = '<div id="content">' +
@@ -383,9 +425,9 @@ function initialize() {
   });
 
 
-  /* When you create an info window, it is not displayed automatically on the map. 
-  To make the info window visible, you need to call the open() method on the InfoWindow, 
-  passing it the Map on which to open, and optionally, the Marker with which to anchor it. 
+  /* When you create an info window, it is not displayed automatically on the map.
+  To make the info window visible, you need to call the open() method on the InfoWindow,
+  passing it the Map on which to open, and optionally, the Marker with which to anchor it.
   If no marker is provided, the info window will open at its position property. */
   google.maps.event.addListener(treeMarker, 'click', function() {
     treeWindow.open(map, treeMarker);
@@ -408,24 +450,24 @@ function getElevation(event) {
     {
         locations[]: LatLng
     }
-   locations (required) defines the location(s) on the earth from which 
-   to return elevation data. This parameter takes an array of LatLngs. 
-   You may pass any number of multiple coordinates within an array, as long as you don't 
-   exceed the service quotas. Note that when passing multiple coordinates, the accuracy of any returned 
+   locations (required) defines the location(s) on the earth from which
+   to return elevation data. This parameter takes an array of LatLngs.
+   You may pass any number of multiple coordinates within an array, as long as you don't
+   exceed the service quotas. Note that when passing multiple coordinates, the accuracy of any returned
    data may be of lower resolution than when requesting data for a single coordinate.*/
   var positionalRequest = {
     'locations': locations
   }
 
-  /* Initiate the location request to the ElevationService using the 
-    getElevationForLocations() method, which is passed a list of one 
+  /* Initiate the location request to the ElevationService using the
+    getElevationForLocations() method, which is passed a list of one
     or more locations using a LocationElevationRequest object. */
   elevationSvc.getElevationForLocations(positionalRequest, function(results, status) {
-    /* For each valid request, the Elevation service will return to the defined 
+    /* For each valid request, the Elevation service will return to the defined
       callback a set of ElevationResult objects along with an ElevationStatus object. */
     if (status == google.maps.ElevationStatus.OK) {
 
-      /* Upon success, the results argument of your callback function 
+      /* Upon success, the results argument of your callback function
         will contain a set of ElevationResult objects.Retrieve the first result: */
       if (results[0]) {
 
@@ -443,14 +485,14 @@ function getElevation(event) {
 }
 
 
-/*To ensure that the map is placed on the page after the page has fully loaded, 
-only execute the function which constructs the Map object once the 
+/*To ensure that the map is placed on the page after the page has fully loaded,
+only execute the function which constructs the Map object once the
 <body> element of the HTML page receives an onload event.
 The Maps API provides the addDomListener() static method to listen to and bind to DOM events.*/
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
-/* Detect iPhone and Android devices by inspecting the navigator.userAgent 
+/* Detect iPhone and Android devices by inspecting the navigator.userAgent
 property within the DOM, to alter layout for particular devices. */
 function detectBrowser() {
   var useragent = navigator.userAgent;

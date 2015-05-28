@@ -11,12 +11,12 @@ I used and modified a lot of the code and instructions in the [Google Maps JavaS
 
 > Portions of this page are reproduced from or are modifications based on work created and [shared by Google](https://developers.google.com/readme/policies/) and used according to terms described in the [Creative Commons 3.0 Attribution License](http://creativecommons.org/licenses/by/3.0/).
 
-In the interest of completeness: since I'm also using a lot of their code, here is an additional attribution: I'm using the Google code from the [Google Maps JavaScript API Tutorial](https://developers.google.com/maps/documentation/javascript/tutorial) according to terms described below: 
+In the interest of completeness: since I'm also using a lot of their code, here is an additional attribution: I reproduced and modified the Google code from the [Google Maps JavaScript API Tutorial](https://developers.google.com/maps/documentation/javascript/tutorial) according to terms described below: 
 > code samples are licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
 
 The code and instructions I used came from many different pages in the [Google Maps JavaScript API Tutorial](https://developers.google.com/maps/documentation/javascript/tutorial), so hopefully, linking to the opening page of the tutorial will satisfy the requirement that I link back to the original source page. I am very grateful to Google for the tutorial, and of course also for the opportunity to make use of the Google Maps JavaScript API! It is a dream come true to have even this simple web app, showing a few locations in San Francisco that I think are fun to visit.
 
-A couple of disclaimers:
+A few disclaimers:
 - There are an enormous number of comments in my code in this project, particularly in the JavaScript file. I would normally never have this many comments, but this was a school project, and I left the comments in so my fellow students could explore what I learned .
 - This is still a work in progress. There is no back end to this project: no database, no web hosting except as a project page on GitHub. The code has not been refactored.
 - I have only been studying JavaScript for a month, so there is a lot I still don't know. I look forward to adding features and improvements as I learn more!
