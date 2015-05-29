@@ -298,6 +298,45 @@ function initialize() {
   });
 
 
+  var lyonMarker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'The Lyon Street Steps',
+    icon: 'stairs.png',
+    place: {
+      placeId: 'EioyNTUxIEx5b24gU3QsIFNhbiBGcmFuY2lzY28sIENBIDk0MTIzLCBVU0E',
+      location: {
+        lat: 37.794256,
+        lng: -122.446652
+      }
+    },
+    attribution: {
+      source: 'Trees and Stairs in SF',
+      //webUrl: need url here
+    }
+  });
+
+  var lyonInfo = '<h1>The Lyon Street Steps</h1>' +
+    '<p>Just being at the summit of these steps is a mystical Zen experience ' +
+    'truly difficult to describe. The feeling of the sky and air ' +
+    'where you are standing is amazing. And, spread out before you are ' +
+    'fabulous views of the Palace of Fine Arts Dome, the blue San Francisco ' +
+    'Bay, and a fog shrouded sky beyond. To the west is the Presidio forest ' +
+    'and to the east are amazing old Pacific Heights mansions with ' +
+    'their manicured lawns and many balconies. ' +
+    '<p>Attribution: <a href="http://www.hiddensf.com/300d' +
+    '-lyon-street-steps-san-francisco-ca.html" target="_blank">' +
+    'hiddenSF</a> (last visited May 28, 2015)</p>';
+
+  var lyonWindow = new google.maps.InfoWindow({
+    content: lyonInfo
+  });
+
+  google.maps.event.addListener(lyonMarker, 'click', function() {
+    lyonWindow.open(map, lyonMarker);
+  });
+
+
   var moragaMarker = new google.maps.Marker({
     map: map,
     animation: google.maps.Animation.DROP,
