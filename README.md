@@ -16,6 +16,10 @@ In the interest of completeness: since I'm also using a lot of their code, here 
 
 The code and instructions I used came from many different pages in the [Google Maps JavaScript API Tutorial](https://developers.google.com/maps/documentation/javascript/tutorial), so hopefully, linking to the opening page of the tutorial will satisfy the requirement that I link back to the original source page. I am very grateful to Google for the tutorial, and of course also for the opportunity to make use of the Google Maps JavaScript API! It is a dream come true to have even this simple web app, showing a few locations in San Francisco that I think are fun to visit.
 
+The photos I used for my custom stairs and trees markers came from [pixabay](http://pixabay.com/).
+[The stairs marker photo](http://pixabay.com/en/stairway-steps-architecture-stairs-269321/)
+[The trees marker photo](http://pixabay.com/en/tree-forest-trunk-nature-leaves-576847/)
+
 A few disclaimers:
 - There are an enormous number of comments in my code in this project, particularly in the JavaScript file. I would normally never have this many comments, but this was a school project, and I left the comments in so my fellow students could explore what I learned .
 - This is still a work in progress. There is no back end to this project: no database, no web hosting except as a project page on GitHub. The code has not been refactored.
