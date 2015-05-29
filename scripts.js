@@ -1,3 +1,4 @@
+// Disclaimer: This is a school project; that's why there are so many comments.
 // Declare map as a global variable
 // so it can be accessed everywhere in the program
 var map;
@@ -148,7 +149,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -187,7 +188,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -229,7 +230,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -271,7 +272,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -312,7 +313,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -351,7 +352,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
@@ -396,7 +397,7 @@ function initialize() {
     },
     attribution: {
       source: 'Trees and Stairs in SF',
-      //webUrl: need url here
+      webUrl: 'http://lorienmcs.github.io/map_app/'
     }
   });
 
