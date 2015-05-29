@@ -1,4 +1,7 @@
-// Disclaimer: This is a school project; that's why there are so many comments.
+/* Disclaimer: This is a school project; that's why there are so many comments.
+The comments and code are mostly from the Google Maps JavaScript API tutorial
+at https://developers.google.com/maps/documentation/javascript/tutorial*/
+
 // Declare map as a global variable
 // so it can be accessed everywhere in the program
 var map;
@@ -153,6 +156,27 @@ function initialize() {
     }
   });
 
+  /* An InfoWindow displays content (usually text or images) in a popup window above the map,
+  at a given location. The info window has a content area and a tapered stem.
+  The tip of the stem is attached to a specified location on the map.
+
+  The InfoWindow constructor takes an InfoWindowOptions object literal,
+  which specifies the initial parameters for displaying the info window.
+
+  The content of the InfoWindow may contain a string of text, a snippet of HTML,
+  or a DOM element. To set the content, either specify it within the InfoWindowOptions
+  or call setContent() on the InfoWindow explicitly.
+
+  If you wish to explicitly size the content, you can put it in a <div> element
+  and style the <div> with CSS. You can use CSS to enable scrolling too.
+  Note that if you do not enable scrolling and the content exceeds the space available
+  in the info window, the content may spill out of the info window.
+
+  Best practices: For the best user experience, only one info window should be open
+  on the map at any one time. Multiple info windows make the map appear cluttered.
+  You can create one InfoWindow object and open it at different locations
+  or markers upon map events, such as user clicks.  */
+
   var mclarInfo = '<h1>Uncle John\'s Tree</h1>' +
     '<p>A single, massive Monterey Cypress stands in front of the ' +
     'McLaren Lodge, where it has stood for over 100 years. It is ' +
@@ -165,6 +189,12 @@ function initialize() {
     'places/uncle-johns-tree-mclaren-lodge" target="_blank">' +
     'Tre at Atlas Obscura</a> (last visited May 27, 2015)</p>';
 
+
+  /* When you create an info window, it is not displayed automatically on the map.
+  To make the info window visible, you need to call the open() method on the InfoWindow,
+  passing it the Map on which to open, and optionally, the Marker with which to anchor it.
+  If no marker is provided, the info window will open at its position property. */
+
   var mclarWindow = new google.maps.InfoWindow({
     content: mclarInfo
   });
@@ -173,7 +203,7 @@ function initialize() {
     mclarWindow.open(map, mclarMarker);
   });
 
- 
+
   var pleasMarker = new google.maps.Marker({
     map: map,
     animation: google.maps.Animation.DROP,
@@ -200,10 +230,10 @@ function initialize() {
     'certain, and recorded in a plaque at the corner of Octavia and Bush streets, ' +
     'is that she was a tireless worker for civil rights and a great entrepreneur.</p>' +
     '<p>The Mary Ellen Pleasant Memorial Park, the smallest park in San Francisco, ' +
-    'consists of six enormous eucalyptus blue gum trees marching down Octavia Street, '+
-    'remaining from the twenty she planted. The trees are landmarked '+
-    'by the City of San Francisco.</p>'+
-    '<p>Attribution: <a href="http://www.sfcityguides.org/public_guidelines.html?article'+
+    'consists of six enormous eucalyptus blue gum trees marching down Octavia Street, ' +
+    'remaining from the twenty she planted. The trees are landmarked ' +
+    'by the City of San Francisco.</p>' +
+    '<p>Attribution: <a href="http://www.sfcityguides.org/public_guidelines.html?article' +
     '=1305&submitted=TRUE&srch_text=&submitted2=&topic=San" target="_blank">' +
     'Marian Halley at SF City Guides</a> (last visited May 28, 2015)</p>';
 
@@ -418,59 +448,6 @@ function initialize() {
 
   google.maps.event.addListener(galvMarker, 'click', function() {
     galvWindow.open(map, galvMarker);
-  });
-
-
-  /* An InfoWindow displays content (usually text or images) in a popup window above the map,
-   at a given location. The info window has a content area and a tapered stem.
-   The tip of the stem is attached to a specified location on the map.
-
-   The InfoWindow constructor takes an InfoWindowOptions object literal,
-   which specifies the initial parameters for displaying the info window.
-
-   The content of the InfoWindow may contain a string of text, a snippet of HTML,
-   or a DOM element. To set the content, either specify it within the InfoWindowOptions
-   or call setContent() on the InfoWindow explicitly.
-
-   If you wish to explicitly size the content, you can put it in a <div> element
-   and style the <div> with CSS. You can use CSS to enable scrolling too.
-   Note that if you do not enable scrolling and the content exceeds the space available
-   in the info window, the content may spill out of the info window.
-
-   Best practices: For the best user experience, only one info window should be open
-   on the map at any one time. Multiple info windows make the map appear cluttered.
-   You can create one InfoWindow object and open it at different locations
-   or markers upon map events, such as user clicks.  */
-
-  var contentString = '<div id="content">' +
-    '<div id="siteNotice">' +
-    '</div>' +
-    '<h1 id="firstHeading" class="firstHeading">Tree</h1>' +
-    '<div id="bodyContent">' +
-    '<p><b>Tree</b>, some content for a <b>Tree</b>, some more ' +
-    'content for a tree. I could put lots of information ' +
-    'in here. I don\'t have a lot to say right now, since this ' +
-    'is only some placeholder text for when I actually have ' +
-    'something of interest to write about. </p>' +
-    '<p>Attribution: Tree, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-    'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-    '(last visited June 22, 2009).</p>' +
-    '</div>' +
-    '</div>';
-
-
-
-  var treeWindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-
-
-  /* When you create an info window, it is not displayed automatically on the map.
-  To make the info window visible, you need to call the open() method on the InfoWindow,
-  passing it the Map on which to open, and optionally, the Marker with which to anchor it.
-  If no marker is provided, the info window will open at its position property. */
-  google.maps.event.addListener(treeMarker, 'click', function() {
-    treeWindow.open(map, treeMarker);
   });
 
 
