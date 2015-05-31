@@ -176,7 +176,6 @@ function initialize() {
   on the map at any one time. Multiple info windows make the map appear cluttered.
   You can create one InfoWindow object and open it at different locations
   or markers upon map events, such as user clicks.  */
-
   var mclarInfo = '<h1>Uncle John\'s Tree</h1>' +
     '<p>A single, massive Monterey Cypress stands in front of the ' +
     'McLaren Lodge, where it has stood for over 100 years. It is ' +
@@ -187,14 +186,12 @@ function initialize() {
     'Gate Park from desolate dunes to an urban greenscape.</p>' +
     '<p>Attribution: <a href="http://www.atlasobscura.com/' +
     'places/uncle-johns-tree-mclaren-lodge" target="_blank">' +
-    'Tre at Atlas Obscura</a> (last visited May 27, 2015)</p>';
-
+    'Tre at Atlas Obscura</a> (website last visited May 31, 2015)</p>';
 
   /* When you create an info window, it is not displayed automatically on the map.
   To make the info window visible, you need to call the open() method on the InfoWindow,
   passing it the Map on which to open, and optionally, the Marker with which to anchor it.
   If no marker is provided, the info window will open at its position property. */
-
   var mclarWindow = new google.maps.InfoWindow({
     content: mclarInfo
   });
@@ -235,7 +232,7 @@ function initialize() {
     'by the City of San Francisco.</p>' +
     '<p>Attribution: <a href="http://www.sfcityguides.org/public_guidelines.html?article' +
     '=1305&submitted=TRUE&srch_text=&submitted2=&topic=San" target="_blank">' +
-    'Marian Halley at SF City Guides</a> (last visited May 28, 2015)</p>';
+    'Marian Halley at SF City Guides</a> (website last visited May 31, 2015)</p>';
 
   var pleasWindow = new google.maps.InfoWindow({
     content: pleasInfo
@@ -277,7 +274,7 @@ function initialize() {
     'Ferns, boulders and a winding walkway add to the tranquility.</p>' +
     '<p>Attribution: <a href="http://www.pyramidcenter.com/' +
     'point-of-interest/redwood-park/" target="_blank">' +
-    'Transamerica Pyramid Center</a> (last visited May 27, 2015)</p>';
+    'Transamerica Pyramid Center</a> (website last visited May 31, 2015)</p>';
 
   var transWindow = new google.maps.InfoWindow({
     content: transInfo
@@ -318,7 +315,7 @@ function initialize() {
     'Marchant Garden, that is home to a flock of emerald parrots.</p>' +
     '<p>Attribution: <a href="http://www.travelandleisure.com/travel-guide' +
     '/north-beachtelegraph-hill/things-to-do/climb-the-filbert-steps/"' +
-    'target="_blank">Travel + Leisure</a> (last visited May 27, 2015)</p>';
+    'target="_blank">Travel + Leisure</a> (website last visited May 31, 2015)</p>';
 
   var filbertWindow = new google.maps.InfoWindow({
     content: filbertInfo
@@ -357,7 +354,7 @@ function initialize() {
     'their manicured lawns and many balconies. ' +
     '<p>Attribution: <a href="http://www.hiddensf.com/300d' +
     '-lyon-street-steps-san-francisco-ca.html" target="_blank">' +
-    'hiddenSF</a> (last visited May 28, 2015)</p>';
+    'hiddenSF</a> (website last visited May 31, 2015)</p>';
 
   var lyonWindow = new google.maps.InfoWindow({
     content: lyonInfo
@@ -368,16 +365,17 @@ function initialize() {
   });
 
 
-  var moragaMarker = new google.maps.Marker({
+
+var maconMarker = new google.maps.Marker({
     map: map,
     animation: google.maps.Animation.DROP,
-    title: '16th Avenue Tiled Steps',
+    title: 'Macondray Lane',
     icon: 'stairs.png',
     place: {
-      placeId: 'ChIJ1wGSxGGHhYAREY_K3hZq3ps',
+      placeId: 'ChIJB28oVu6AhYAR9N1RytP5vvM',
       location: {
-        lat: 37.756241,
-        lng: -122.473635
+        lat: 37.799171,
+        lng: -122.415680
       }
     },
     attribution: {
@@ -386,30 +384,108 @@ function initialize() {
     }
   });
 
-  var moragaInfo = '<h1>The 16th Avenue Tiled Steps</h1>' +
-    '<p>If you\'ve ever wanted to find a hidden art gem in San Francisco, head to ' +
-    '16th and Moraga to discover The 16th Avenue Tiled Steps. Not only will ' +
-    'you be able to see some amazing views of the city, you\'ll get to ' +
-    'appreciate a beautiful mosaic running up 163 steps. Inspired by the ' +
-    ' world-famous steps in Rio de Janeiro, Irish ceramist Aileen Barr ' +
-    'and mosaic artist Colette Crutcher joined forces, working with over ' +
-    '300 community volunteers for over a two and a half year ' +
-    'period until they unveiled the project in August 2005.</p>' +
-    '<p>The names of over 220 sponsors were actually woven into the ' +
-    'sweeping sea-to-sky design and, amazingly, over 2,000 handmade ' +
-    'tiles and 75,000 fragments of tile, mirror and stained glass ' +
-    'went into the finished piece. There were a total of 163 ' +
-    'separate mosaic panels created, one for each step riser.</p>' +
-    '<p>Attribution: <a href="http://www.mymodernmet.com/profiles/blogs/' +
-    '16th-avenue-tiled-steps-san-francisco" target="_blank">Alice Yoo, ' +
-    'My Modern Met</a> (last visited May 27, 2015)</p>';
 
-  var moragaWindow = new google.maps.InfoWindow({
-    content: moragaInfo
+  var maconInfo = '<h1>Macondray Lane</h1>' +
+    '<p>San Francisco has no shortage of impressive, grand homes, but it\'s the tiny ' +
+    'fairy-tale lanes that make most want to move here, and Macondray Lane is the ' +
+    'quintessential hidden garden. Enter under a lovely wooden trellis and proceed ' +
+    'down a quiet, cobbled pedestrian lane lined with Edwardian cottages and flowering ' +
+    'plants and trees. Watch your step — the cobblestones are quite uneven in spots. ' +
+    'A flight of steep wooden stairs at the end of the lane leads to Taylor Street — on ' +
+    'the way down you can\'t miss the bay views. If you\'ve read any of Armistead Maupin\'s ' +
+    '<cite>Tales of the City</cite> books, you may find the lane vaguely familiar. ' +
+    'It\'s the thinly disguised setting for part of the series\' action.</p>' +
+    '<p>Attribution: <a href="http://www.fodors.com/world/north-america/usa/' +
+    'california/san-francisco/things-to-do/sights/reviews/macondray-lane-141356/"' +
+    'target="_blank">Fodor\'s Travel</a> (website last visited May 31, 2015)</p>';
+
+  var maconWindow = new google.maps.InfoWindow({
+    content: maconInfo
   });
 
-  google.maps.event.addListener(moragaMarker, 'click', function() {
-    moragaWindow.open(map, moragaMarker);
+  google.maps.event.addListener(maconMarker, 'click', function() {
+    maconWindow.open(map, maconMarker);
+  });
+
+
+var moragMarker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'The Moraga Stairs',
+    icon: 'stairs.png',
+    place: {
+      placeId: 'ChIJ1wGSxGGHhYAREY_K3hZq3ps',
+      location: {
+        lat: 37.756210,
+        lng: -122.473251
+      }
+    },
+    attribution: {
+      source: 'Trees and Stairs in SF',
+      webUrl: 'http://lorienmcs.github.io/map_app/'
+    }
+  });
+
+  var moragInfo = '<h1>The Moraga Stairs</h1>' +
+    '<p>The delightfully mosaic-tiled Moraga Stairs start at Moraga St ' +
+    'and 16th Ave and climb up to 15th Ave. More than 220 neighbors ' +
+    'sponsored the hand-made animal, bird, and fish mosaic tiles ' +
+    'now imbedded on the vertical risers of each step. The overall visitor\'s ' +
+    'experience is a beautiful artistic surprise quite unexpected ' +
+    'within an ordinary residential neighborhood. ' +
+    '<p>Attribution: <a href="http://www.hiddensf.com/moraga-st-tiled-steps.html" ' +
+    'target="_blank">Mike S., ' +
+    'hiddenSF</a> (website last visited May 31, 2015)</p>';
+
+  var moragWindow = new google.maps.InfoWindow({
+    content: moragInfo
+  });
+
+  google.maps.event.addListener(moragMarker, 'click', function() {
+    moragWindow.open(map, moragMarker);
+  });
+
+
+  var sixtMarker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'Hidden Garden Steps',
+    icon: 'stairs.png',
+    place: {
+      placeId: 'ChIJZ2FsSmGHhYAR5T7IucrXu-Y',
+      location: {
+        lat: 37.759898,
+        lng: -122.473675
+      }
+    },
+    attribution: {
+      source: 'Trees and Stairs in SF',
+      webUrl: 'http://lorienmcs.github.io/map_app/'
+    }
+  });
+
+  var sixtInfo = '<h1>Hidden Garden Steps</h1>' +
+    '<p>The Hidden Garden Steps project has created and installed a public ' +
+    'art space, a 148-step mosaic tile staircase which is the extension of ' +
+    '16th Avenue between Kirkham and Lawton streets. Our artists, Aileen Barr ' +
+    'and Colette Crutcher, are responsible for the first ceramic-tiled stairway, ' +
+    'the Moraga Steps, also in the Inner Sunset of San Francisco.</p> ' +
+    '<p>Barr and Crutcher’s mosaic design is their most ambitious, consisting ' +
+    'of large-scale elements that encompass multiple stair steps. The project\'s ' +
+    'largest element—a salamander—extends up 26 steps and exploits the curved ' +
+    'structure of the staircase. The artists have included texts in the tiles ' +
+    'they have made. The donor-chosen texts honor families, friends, wives, ' +
+    'husbands, parents, children, pets, causes, births, deaths ' +
+    '… whatever was dear to the donor’s heart.</p>' +
+    '<p>Attribution: <a href="http://hiddengardensteps.org/HGS-Project-Desc-rev.htm" ' +
+    'target="_blank">Hidden Garden Steps</a> (website last visited May 31, 2015)</p>';
+
+  var sixtWindow = new google.maps.InfoWindow({
+    content: sixtInfo
+  });
+
+  google.maps.event.addListener(sixtMarker, 'click', function() {
+    sixtWindow.open(map, sixtMarker);
   });
 
 
@@ -439,8 +515,8 @@ function initialize() {
     'of downtown and the San Francisco Bay.</p>' +
     '<p>44 Tehama St San Francisco CA 94105 • (415) 805-1888</p>' +
     '<p>Attribution: <a href="http://www.galvanize.com/campuses/san-francisco-soma/"' +
-    'target="_blank">Galvanize</a> (last visited ' +
-    'May 27, 2015)</p>';
+    'target="_blank">Galvanize</a> (website last visited ' +
+    'May 31, 2015)</p>';
 
   var galvWindow = new google.maps.InfoWindow({
     content: galvInfo
