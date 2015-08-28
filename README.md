@@ -2,7 +2,8 @@
 
 #####:sunny: :palm_tree: :evergreen_tree:[Demo of my completed assignment](http://lorienmcs.github.io/map_app/):evergreen_tree: :palm_tree: :sunny:
 
-:sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: Trees and Stairs in SF :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny:
+
+###:sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: Trees and Stairs in SF :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny:
 
 A project using Google Maps JavaScript API to design a map showing a few places I think are interesting in San Francisco.
 
