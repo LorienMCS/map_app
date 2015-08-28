@@ -1,5 +1,3 @@
-# map_app
-
 #####:sunny: :palm_tree: :evergreen_tree:[Demo of my completed assignment](http://lorienmcs.github.io/map_app/):evergreen_tree: :palm_tree: :sunny:
 
 
