@@ -1,9 +1,12 @@
 # map_app
-A project using Google Maps JavaScript API to design a map showing a few places I think are interesting in San Francisco.
+
+#####:sunny: :palm_tree: :evergreen_tree:[Demo of my completed assignment](http://lorienmcs.github.io/map_app/):evergreen_tree: :palm_tree: :sunny:
 
 :sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: :sunny: :palm_tree: :evergreen_tree: Trees and Stairs in SF :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny: :evergreen_tree: :palm_tree: :sunny:
 
-This is a project for the Full Stack Program at [Galvanize](http://www.galvanize.com/courses/full-stack/). The goal for the assignment was to spend three days using our creativity and JS skills to create an app using an external library or technology.
+A project using Google Maps JavaScript API to design a map showing a few places I think are interesting in San Francisco.
+
+This is a project for the fifth week of the Full Stack Program at [Galvanize](http://www.galvanize.com/courses/full-stack/). The goal for the assignment was to spend three days using our creativity and JS skills to create an app using an external library or technology.
 
 It's been a goal of mine for a while now to create an app detailing nature-related and other interesting spots in San Francisco. This web page, using Google Maps JavaScript API, is my first attempt.
 
