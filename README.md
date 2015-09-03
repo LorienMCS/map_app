@@ -25,4 +25,4 @@ The images I used for my custom stair and tree markers came from [pixabay](http:
 A few disclaimers:
 - There are an enormous number of comments in my code in this project, particularly in the JavaScript file. I would normally never have this many comments, but this was a school project, and I left the comments in so my fellow students could explore what I learned .
 - This is still a work in progress. There is no back end to this project: no database, no web hosting except as a project page on GitHub. The code has not been refactored.
-- I have only been studying JavaScript for a month, so there is a lot I still don't know. I look forward to adding features and improvements as I learn more!
+
